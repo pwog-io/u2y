@@ -1,3 +1,5 @@
 # build dir
 dist
 node_modules
+
+.turbo

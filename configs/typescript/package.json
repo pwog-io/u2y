@@ -1,0 +1,9 @@
+{
+    "name": "@u2y/typescript-config",
+    "version": "0.0.0",
+    "private": true,
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    }
+}

@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
+        "type-check": "tsc --noEmit",
         "dev": "next dev --port 3300 --turbopack",
         "build": "next build",
         "start": "next start",

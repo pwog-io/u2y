@@ -1,6 +1,6 @@
 {
     "name": "docs",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "private": true,
     "scripts": {
         "dev": "next dev --port 3300 --turbopack",
@@ -18,8 +18,9 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "@u2y/typescript-config": "workspace:^",
         "eslint": "^9",
         "eslint-config-next": "15.2.0",
-        "typescript": "^5"
+        "typescript": "^5.8.2"
     }
 }

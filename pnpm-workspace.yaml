@@ -2,3 +2,8 @@ packages:
     - 'apps/*'
     - 'configs/*'
     - 'packages/*'
+# This is required for scripts that set environment variables to work
+#   https://pnpm.io/cli/run#shellemulator
+# Ex: `"build": "NODE_ENV=production vite build"`
+#
+shellEmulator: true

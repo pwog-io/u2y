@@ -1,0 +1,21 @@
+{
+    "extends": "@u2y/typescript-config/tsconfig.base.json",
+    "compilerOptions": {
+        // "types": ["vite/client"], // https://vite.dev/guide/features.html#client-types
+        "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.build.tsbuildinfo",
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "target": "ES2020",
+        "jsx": "react-jsx",
+        "noEmit": true,
+        // https://vite.dev/guide/features.html#usedefineforclassfields
+        "useDefineForClassFields": true,
+    },
+    "include": [ "src", "scripts" ],
+    "exclude": [
+        "node_modules",
+        "**/*.test.ts",
+        "**/*.stories.tsx",
+        "**/dist",
+    ]
+}

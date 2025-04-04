@@ -10,6 +10,15 @@
         "noEmit": true,
         // https://vite.dev/guide/features.html#usedefineforclassfields
         "useDefineForClassFields": true,
+        "plugins": [
+            // https://github.com/mrmckeb/typescript-plugin-css-modules
+            {
+                "name": "typescript-plugin-css-modules",
+                "options": {
+                    "classnameTransform": "camelCaseOnly",
+                },
+            },
+        ],
     },
     "include": [ "src", "scripts" ],
     "exclude": [

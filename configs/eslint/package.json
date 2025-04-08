@@ -1,0 +1,36 @@
+{
+    "name": "@pwog/eslint-config",
+    "version": "0.0.1",
+    "description": "Extendable ESLint configurations with Pwog coding style",
+    "author": "Pwog Team<pwog.io>",
+    "license": "MIT",
+    "keywords": [
+        "eslint",
+        "eslintconfig",
+        "typescript-eslint",
+        "pwog-codestyle"
+    ],
+    "type": "module",
+    "exports": {
+        ".": "./index.js",
+        "./base": "./configs/base.js",
+        "./react": "./configs/react.js",
+        "./stylistic": "./configs/stylistic.js",
+        "./typescript": "./configs/typescript.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "@eslint/js": "^9.24.0",
+        "@stylistic/eslint-plugin": "4.1.0",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "globals": "^16.0.0",
+        "typescript": "^5.8.3",
+        "typescript-eslint": "^8.29.0"
+    },
+    "peerDependencies": {
+        "eslint": ">= 9"
+    }
+}

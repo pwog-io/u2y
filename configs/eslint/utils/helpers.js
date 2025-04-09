@@ -1,3 +1,4 @@
+import { defineConfig } from 'eslint/config'
 
 /**
  * Returns a ESLint config factory function for the given configuration array
@@ -26,11 +27,11 @@ export function getConfigFactory(defaultConfigs) {
        }
 
        if (!override) {
-           return [{
+           return defineConfig([{
                extends: [defaultConfigs],
                ...config,
                name: config.name ? `[${config.name}]` : '',
-           }]
+           }])
        }
 
        return defaultConfigs.map((defaultConfig) => {

@@ -6,8 +6,8 @@
 |
 -----------------------------------------------------------------------------*/
 import globals from 'globals'
-import pluginReact from 'eslint-plugin-react'
-import pluginReactHooks from 'eslint-plugin-react-hooks'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
 
 /**
  * Eslint configuration for React based on `eslint-plugin-react`
@@ -23,16 +23,16 @@ const defaultConfigs = [
     {
         name: '@pwog/react/recommended',
         // files: ['**/*.{jsx,tsx}'],
-        ...pluginReact.configs.flat.recommended,
+        ...reactPlugin.configs.flat.recommended,
     },
     {
         name: '@pwog/react/jsx-runtime',
         // disable unnecessary config options for React 17+(using new JSX transform)
         //      https://www.npmjs.com/package/eslint-plugin-react#configuration-legacy-eslintrc-
-        ...pluginReact.configs.flat['jsx-runtime'],
+        ...reactPlugin.configs.flat['jsx-runtime'],
     },
     {
-        ...pluginReactHooks.configs['recommended-latest'],
+        ...reactHooksPlugin.configs['recommended-latest'],
         // ! Must be added after plugin's config to force override name attribute
         name: '@pwog/react-hooks/recommended',
     },
@@ -40,12 +40,12 @@ const defaultConfigs = [
         name: '@pwog/react-config',
         // files: ['**/*.{jsx,tsx}'],
         plugins: {
-            'react': pluginReact,
-            // 'react-hooks': pluginReactHooks,
+            'react': reactPlugin,
+            // 'react-hooks': reactHooksPlugin,
         },
         languageOptions: {
             globals: {
-                ...globals.browser,
+                // ...globals.browser,
                 ...globals.serviceworker,
             },
         },

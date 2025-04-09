@@ -1,1 +1,1 @@
-# Pwog ESLint extendable configs
+# Pwog ESLint shareable configs

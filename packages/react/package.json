@@ -17,26 +17,38 @@
     "bugs": {
         "url": "https://github.com/pwog-io/u2y/issues"
     },
-    "main": "index.js",
     "type": "module",
+    "main": "index.js",
+    "files": [
+        "dist"
+    ],
     "exports": {
         ".": "./dist/index.js",
         "./button": {
+            "style": "./dist/components/button/style.css",
             "types": "./dist/components/button/Button.d.ts",
             "default": "./dist/components/button/index.js"
         }
     },
+    "sideEffects": [
+        "**/*.css"
+    ],
     "scripts": {
         "type-check": "tsc -b",
-        "dev": "NODE_ENV=development vite build --watch",
+        "dev": "NODE_ENV=development vite build --mode development --watch",
+        "lint": "eslint . --max-warnings 0",
+        "lint:inspect": "npx @eslint/config-inspector@latest --open false",
         "build": "NODE_ENV=production vite build"
     },
     "devDependencies": {
+        "@pwog/eslint-config": "workspace:^",
         "@types/node": "^20",
         "@types/react": "^19.0.12",
         "@types/react-dom": "^19.0.4",
         "@u2y/typescript-config": "workspace:^",
         "@vitejs/plugin-react": "^4.3.4",
+        "eslint": "^9",
+        "eslint-plugin-only-warn": "^1.1.0",
         "glob": "^11.0.1",
         "typescript": "^5.8.2",
         "typescript-plugin-css-modules": "^5.1.0",
@@ -44,7 +56,7 @@
         "vite-plugin-dts": "^4.5.3"
     },
     "peerDependencies": {
-        "react": "^17 || ^18 || ^19",
-        "react-dom": "^17 || ^18 || ^19"
+        "react": "^18 || ^19",
+        "react-dom": "^18 || ^19"
     }
 }

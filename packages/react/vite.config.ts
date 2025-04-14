@@ -1,11 +1,14 @@
-import dts from 'vite-plugin-dts'
+import crypto from 'crypto'
 import react from '@vitejs/plugin-react'
+import dts from 'vite-plugin-dts'
 
-import { defineConfig } from 'vite'
-import { extname, relative, resolve } from 'path'
 import { fileURLToPath } from 'node:url'
+import { basename, dirname, extname, relative, resolve } from 'path'
 import { glob } from 'glob'
+import { defineConfig } from 'vite'
 
+const filepath: string = fileURLToPath(import.meta.url)
+const dir = dirname(filepath)
 const buildInputsIgnore = [
     'src/**/*.d.ts',
     'src/**/*.types.ts',
@@ -20,7 +23,7 @@ export default defineConfig({
         cssCodeSplit: true,
         sourcemap: process.env.NODE_ENV !== 'production',
         lib: {
-            entry: resolve(__dirname, 'src/index.ts'),
+            entry: resolve(dir, 'src/index.ts'),
             formats: [
                 'es',
             ],
@@ -42,9 +45,9 @@ export default defineConfig({
                 ])
             ),
             output: {
-                banner: '/* Pwog ~ Uway React */',
-                assetFileNames: 'assets/[name][extname]',
-                entryFileNames: (chunk) => `${chunk.name.toLocaleLowerCase()}.js`,
+                assetFileNames: 'components/[name]/style.css',
+                // assetFileNames: 'components/[name]/[name][extname]',
+                entryFileNames: chunk => `${chunk.name.toLowerCase()}.js`,
                 /* Adds CSS import statement at the top of compiled component files */
                 intro: (chunk) => {
                     // console.log('CHUNK: ', chunk.name, chunk.viteMetadata?.importedCss)
@@ -55,25 +58,42 @@ export default defineConfig({
                         return ''
                     }
 
-                    const assetsPath = chunk.name.includes('_composables')
-                        ? '../../../assets'
-                        : '../../assets'
-
-                    // prepend file w/ given string
-                    // return 'import \'../../assets/[fileName].css\''
                     return `
                     'use client'
-                    import '${assetsPath}/${chunk.exports[0]}.css'
+                    import './style.css'
                     `
                 },
             },
         },
     },
     css: {
+        // https://github.com/madyankin/postcss-modules
         modules: {
+            // ? css seletors authored w/ dashes will be converted to camelCase on build
             localsConvention: 'camelCaseOnly',
-            generateScopedName: '[name]__[local]___[hash:base64:5]',
+            // https://github.com/madyankin/postcss-modules
+            // generateScopedName: 'u2y-[local]-[hash:base64:5]'.toLowerCase(),
+            generateScopedName(name, filepath, css) {
+                // Generate a 6 characters length class name(hash) for distribution build
+                if (process.env.NODE_ENV === 'production') {
+                    return crypto
+                        .createHash('sha256')
+                        .update(`${name}:${css}`)
+                        .digest('base64url')
+                        .replace(/[-_]/, '')
+                        .replace(/^[\d]+/, '') // make sure class names don't start w/ number
+                        .slice(0, 6)
+                        .toLowerCase()
+                }
+
+                // .../components/Button/Button.module.css?used ==> button
+                const componentName = basename(filepath).split('.', 1)[0].toLowerCase()
+
+                return `u2y-${componentName}-${name}`
+            },
         },
+        // Ensure proper source maps in development
+        devSourcemap: true,
     },
     plugins: [
         // https://github.com/qmhc/vite-plugin-dts
@@ -87,7 +107,7 @@ export default defineConfig({
             // ? we need to validate above assumption & make sure `compilerOptions` values are merged(not overriden)
             compilerOptions: {
                 declarationMap: process.env.NODE_ENV !== 'production',
-            }
+            },
         }),
         react(),
     ],

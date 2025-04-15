@@ -1,4 +1,8 @@
 declare module '*.module.css' {
-    const classes: { [key: string]: string }
+    const classes: Record<string, string>
+    export default classes
+}
+declare module '*.module.scss' {
+    const classes: Record<string, string>
     export default classes
 }

@@ -41,6 +41,7 @@ export const defaultConfigs = [
                 SwitchCase: 4,
             }],
             // JSX rules
+            '@stylistic/jsx-indent-props': [ 'warn', 4 ],
             '@stylistic/jsx-quotes': [ 'warn', 'prefer-single' ],
             '@stylistic/comma-dangle': [ 'warn', {
                 arrays: 'always-multiline',

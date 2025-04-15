@@ -1,0 +1,7 @@
+{
+    // This ensure TypeScript version used to compile/type-check the codebase matches the version used for IntelliSense
+    //      https://code.visualstudio.com/docs/typescript/typescript-compiling#_using-the-workspace-version-of-typescript
+    // It's also required by `typescript-plugin-css-modules` to provide intellisense for imported CSS modules in VsCode
+    //      https://github.com/mrmckeb/typescript-plugin-css-modules?tab=readme-ov-file#visual-studio-code
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+}

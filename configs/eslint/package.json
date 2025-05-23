@@ -1,6 +1,6 @@
 {
     "name": "@pwog/eslint-config",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Shareable ESLint configurations with Pwog coding style",
     "author": "Pwog Team<pwog.io>",
     "license": "MIT",

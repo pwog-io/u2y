@@ -1,1 +1,1 @@
-# Pwog shareable TypeScript configurations
+# Shareable TypeScript configurations(pwog.io)

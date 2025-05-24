@@ -1,6 +1,6 @@
 {
     "name": "@u2y/react",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Uway - React components library",
     "author": "Pwog Team<pwog.io>",
     "license": "MIT",
@@ -44,25 +44,28 @@
     },
     "devDependencies": {
         "@pwog/eslint-config": "workspace:^",
-        "@types/node": "^20",
-        "@types/react": "^19.0.12",
-        "@types/react-dom": "^19.0.4",
+        "@types/node": "^20.17.38",
+        "@types/react": "^19.1.2",
+        "@types/react-dom": "^19.1.3",
         "@u2y/typescript-config": "workspace:^",
-        "@vitejs/plugin-react": "^4.3.4",
-        "eslint": "^9",
+        "@vitejs/plugin-react": "^4.4.1",
+        "eslint": "^9.26.0",
         "eslint-plugin-only-warn": "^1.1.0",
-        "glob": "^11.0.1",
-        "postcss-preset-env": "^10.1.5",
-        "sass-embedded": "^1.86.3",
-        "stylelint": "^16.18.0",
+        "glob": "^11.0.2",
+        "postcss-preset-env": "^10.1.6",
+        "sass-embedded": "^1.87.0",
+        "stylelint": "^16.19.1",
         "stylelint-config-standard-scss": "^14.0.0",
-        "typescript": "^5.8.2",
+        "typescript": "^5.8.3",
         "typescript-plugin-css-modules": "^5.1.0",
-        "vite": "^6.2.0",
+        "vite": "^6.3.5",
         "vite-plugin-dts": "^4.5.3"
     },
     "peerDependencies": {
         "react": "^18 || ^19",
         "react-dom": "^18 || ^19"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }

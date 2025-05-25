@@ -1,6 +1,7 @@
 import 'eslint-plugin-only-warn'
 import { defineConfig } from 'eslint/config'
 import { base, jsxA11y, react, tsStrictTypeChecked } from '@pwog/eslint-config'
+import storybook from 'eslint-plugin-storybook'
 
 export default defineConfig([
     base({ name: 'base', files: ['**/*.{js,jsx,mjs,ts,tsx}'] }, true),
@@ -16,6 +17,7 @@ export default defineConfig([
     }),
     react({ name: 'tsx', files: ['**/*.tsx'] }),
     jsxA11y({ name: 'tsx', files: ['**/*.tsx'] }),
+    ...storybook.configs['flat/recommended'],
     {
         name: '[tools-lint]',
         files: [

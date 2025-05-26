@@ -108,6 +108,13 @@ export default defineConfig({
             compilerOptions: {
                 declarationMap: process.env.NODE_ENV !== 'production',
             },
+            // ! specifying `include` & `exclude` here to prevent type genration for storybook files
+            include: [
+                'src/**/*.{ts,tsx}',
+            ],
+            exclude: [
+                '**/*.stories.tsx',
+            ],
         }),
         react(),
     ],

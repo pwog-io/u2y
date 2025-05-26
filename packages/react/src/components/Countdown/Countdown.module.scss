@@ -1,0 +1,57 @@
+/* ----------------------------------------------------------------------------
+|> Uway Countdown styles
+-------------------------------------------------------------------------------
+
+ Configurable properties through variables:
+--u2y-countdown-progress-bg-stroke: Progress bar's background stroke color
+--u2y-countdown-progress-fg-stroke: Progress bar's foreground stroke color
+
+--u2y-countdown-timer-color:    Time counter display text color
+---------------------------------------------------------------------------- */
+@use '../../styles/colors' as color;
+
+/* Default values' variable */
+$background: #0066FF;
+$disabled-background: #DAE2ED;
+$disabled-color: #6B7A90;
+$focus-color: #99CCFF;
+$text-color: #ffffff;
+
+:where(.container) {
+    position: relative;
+}
+
+:where(.progressBackground) {
+    fill: none;
+    stroke: var(
+        --u2y-countdown-progress-bg-stroke,
+        var(--u2y-color-neutral-200, color.$neutral-200)
+    );
+}
+
+:where(.progressForeground) {
+    fill: none;
+    stroke: var(
+        --u2y-countdown-progress-fg-stroke,
+        var(--u2y-color-blue-1000, color.$blue-1000)
+    );
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+:where(.timer) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    color: var(
+        --u2y-countdown-timer-color,
+        var(--u2y-color-neutral-500, color.$neutral-500)
+    );
+}

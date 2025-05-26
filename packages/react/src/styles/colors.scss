@@ -1,0 +1,47 @@
+/* ------------------------------------------------------------------------
+|> Colors
+------------------------------------------------------------------------ */
+
+/* ||> white/black shades */
+$neutral-100: #ffffff;
+$neutral-200: #f3f4f7;
+$neutral-300: #bcc0d6;
+$neutral-400: #6a6a6f;
+$neutral-500: #3a3a3f;
+$neutral-600: #232629;
+$neutral-700: #1a1a1f;
+$neutral-800: #0d1117;
+$neutral-900: #070a0d; /* ALT:  #0c0e0d */
+$neutral-1000: #000000;
+
+/* ||> blue shades(links, focus, ...) */
+$blue-100: #fbfdff;
+$blue-200: #f5faff;
+$blue-300: #edf6ff;
+$blue-400: #e1f0ff;
+$blue-500: #cee7fe;
+$blue-600: #b7d9f8;
+$blue-700: #96c7f2;
+$blue-800: #5eb0ef;
+$blue-900: #0091ff;
+$blue-1000: #0081f1;
+$blue-1100: #006adc;
+
+/* ||> states colors - !needs review */
+$static-red-400: #ed4030;
+$static-red-500: #d91c15;
+$static-red-600: #bb0202;
+$static-red-700: #9a0000;
+$static-orange-400: #fa8b1a;
+$static-orange-500: #e97500;
+$static-orange-600: #d16100;
+$static-orange-700: #b65000;
+$static-green-400: #1da973;
+$static-green-500: #009461;
+$focus-ring-success: #255635; /* Cal Poly green */
+$focus-ring-success-bg: #a6d9b766;
+$focus-ring-warning: #6e590d; /* Field drab */
+$focus-ring-warning-bg: #e9c43f26;
+$focus-ring-danger: #c22e32;
+$focus-ring-danger-bg: #c22e3226;
+// $focus-ring-info: #006adc;

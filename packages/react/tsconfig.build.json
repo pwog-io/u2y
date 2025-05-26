@@ -20,11 +20,14 @@
             },
         ],
     },
-    "include": [ "src" ],
+    "include": [
+        ".storybook/**/*",
+        "src",
+    ],
     "exclude": [
         "node_modules",
         "**/*.test.ts",
-        "**/*.stories.tsx",
+        // "**/*.stories.tsx",
         "**/dist",
     ]
 }

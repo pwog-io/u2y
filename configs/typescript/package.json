@@ -1,8 +1,14 @@
 {
     "name": "@u2y/typescript-config",
-    "version": "0.0.0",
-    "private": true,
+    "version": "0.1.1",
+    "description": "Shareable TypeScript configurations(pwog.io)",
+    "author": "Pwog Team<pwog.io>",
     "license": "MIT",
+    "keywords": [
+        "typescript",
+        "typescript-config",
+        "pwog-codestyle"
+    ],
     "publishConfig": {
         "access": "public"
     }

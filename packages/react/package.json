@@ -28,6 +28,11 @@
             "style": "./dist/components/button/style.css",
             "types": "./dist/components/button/Button.d.ts",
             "default": "./dist/components/button/index.js"
+        },
+        "./countdown": {
+            "style": "./dist/components/countdown/style.css",
+            "types": "./dist/components/countdown/Countdown.d.ts",
+            "default": "./dist/components/countdown/index.js"
         }
     },
     "sideEffects": [
